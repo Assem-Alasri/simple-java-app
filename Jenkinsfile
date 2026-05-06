@@ -1,6 +1,6 @@
 node{
-    gti branch: 'main', url: 'https://github.com/Assem-Alasri/simple-java-app.git'
-    stage('Bluid'){
+    git branch: 'main', url: 'https://github.com/Assem-Alasri/simple-java-app.git'
+    stage('Build'){
         try{
             sh 'echo "Build stage"'
         }
@@ -9,7 +9,7 @@ node{
             throw e
         }
     }
-    
+
     stage('Test'){
         if (env.BRANCH_NAME == "feat"){
             sh 'echo "test stage"'
